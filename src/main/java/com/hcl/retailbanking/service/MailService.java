@@ -11,9 +11,9 @@ public class MailService {
 	@Autowired
 	public JavaMailSender emailSender;
 
-	public void sendOTPMail(String to) {
+	public void sendOTPMail(String to, String otp) {
 		try{
-			sendMail(to, generateOTP());
+			sendMail(to, otp);
 			System.out.println("Email sent successfully...");
 		}catch(Exception e){
 			System.out.println(e);
@@ -24,7 +24,7 @@ public class MailService {
 		SimpleMailMessage message = new SimpleMailMessage();
 		message.setTo(to);
 		message.setSubject("This is OTP to verify the Payee !!!");
-		message.setText(generateOTP());
+		message.setText(otp);
 		emailSender.send(message);
 	}
 	
