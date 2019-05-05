@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.hcl.retailbanking.entities.CustomerCreationEntity;
 
+
 @Repository
 public interface CustomerCreationRepository extends JpaRepository<CustomerCreationEntity, Long> {
 
