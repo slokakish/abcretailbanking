@@ -1,13 +1,16 @@
 package com.hcl.retailbanking.service;
 
-import com.hcl.retailbanking.pojos.CustomerCreation;
+import org.springframework.stereotype.Service;
 
+import com.hcl.retailbanking.entities.ManagePayee;
+
+@Service
 public interface ManagePayeeService {
 
-	 public String deletePayee(long customer_id);
+	public void deletePayee(long payeeId);
 
-	public boolean doPayeeValidation(long accountId, long customerId);
+	public ManagePayee doPayeeValidation(ManagePayee payee);
 
-	public void addPayee(CustomerCreation customer, long accountId);
+	public ManagePayee addPayee(ManagePayee payeeId);
 
 }

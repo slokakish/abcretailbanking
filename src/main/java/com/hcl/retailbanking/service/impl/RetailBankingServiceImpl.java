@@ -1,11 +1,13 @@
 package com.hcl.retailbanking.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.hcl.retailbanking.entities.CustomerCreationEntity;
 import com.hcl.retailbanking.repositories.CustomerCreationRepository;
 import com.hcl.retailbanking.service.RetailBankingService;
 
+@Service
 public class RetailBankingServiceImpl implements RetailBankingService {
 
 	@Autowired
