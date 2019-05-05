@@ -7,10 +7,12 @@ import com.hcl.retailbanking.entities.ManagePayee;
 @Service
 public interface ManagePayeeService {
 
-	public void deletePayee(long payeeId);
+	String deletePayee(long PayeeId);
 
 	public ManagePayee doPayeeValidation(ManagePayee payee);
 
 	public ManagePayee addPayee(ManagePayee payeeId);
+	
+	public String verifyPayee(int otp, Long payeeId);
 
 }
