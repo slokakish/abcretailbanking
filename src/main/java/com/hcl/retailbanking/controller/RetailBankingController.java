@@ -10,6 +10,7 @@ import com.hcl.retailbanking.entities.Admin;
 import com.hcl.retailbanking.entities.CustomerCreationEntity;
 import com.hcl.retailbanking.pojos.Response;
 import com.hcl.retailbanking.service.AdminService;
+import com.hcl.retailbanking.service.ManagePayeeService;
 import com.hcl.retailbanking.service.RetailBankingService;
 
 @RestController
@@ -18,8 +19,12 @@ public class RetailBankingController {
 
 	@Autowired
 	RetailBankingService retailbankService;
+
 	@Autowired
 	private AdminService adminService;
+
+	@Autowired
+	ManagePayeeService managePayeeService;
 
 	@PostMapping("/customerLogin")
 	public Response customerLogin(@RequestParam("id") int id) {
