@@ -1,7 +1,5 @@
 package com.hcl.retailbanking.service.impl;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +13,7 @@ public class ManagePayeeServiceImpl implements ManagePayeeService {
 
 	@Autowired
 	ManagePayeeRepository managePayeeRepo;
+	
 	@Autowired
 	MailService mailService;
 
@@ -57,6 +56,17 @@ public class ManagePayeeServiceImpl implements ManagePayeeService {
 			return "Payee verified successfully!";
 		} else {
 			return "Payee verification failed!";
+		}
+	}
+
+	@Override
+	public String verificationDeletePayee(int otp, Long payeeId) {
+		ManagePayee verifiedPayee = managePayeeRepo.findById(payeeId).get();
+		if (verifiedPayee.getOtp() == otp) {
+			managePayeeRepo.deleteById(verifiedPayee.getPayee_id());
+			return "Payee verified and deleted successfully!";
+		} else {
+			return "Payee verification and deletion failed!";
 		}
 	}
 

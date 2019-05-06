@@ -14,5 +14,7 @@ public interface ManagePayeeService {
 	public ManagePayee addPayee(ManagePayee payeeId);
 	
 	public String verifyPayee(int otp, Long payeeId);
+	
+	public String verificationDeletePayee(int otp, Long payeeId);
 
 }

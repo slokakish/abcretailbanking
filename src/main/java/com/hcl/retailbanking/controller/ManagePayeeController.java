@@ -44,5 +44,11 @@ public class ManagePayeeController {
 		String verifyPayee = managePayeeService.verifyPayee(otp, payeeId);
 		return new ResponseEntity<String>(verifyPayee, HttpStatus.OK);
 	}
+	
+	@DeleteMapping("/verificationDeletePayee")
+	public ResponseEntity<String> verificationDeletePayee(@RequestParam("otp") int otp, @RequestParam("payeeId") Long payeeId) {
+		String verifyPayee = managePayeeService.verificationDeletePayee(otp, payeeId);
+		return new ResponseEntity<String>(verifyPayee, HttpStatus.OK);
+	}
 
 }
