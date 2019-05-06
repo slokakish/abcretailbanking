@@ -47,12 +47,10 @@ public class RetailBankingController {
 		return null;
 	}
 	
-	/* @PostMapping("addPayee")
-	public CustomerCreationEntity addPayee(@RequestParam(name = "accountId", required = true) long accountId,
-			@RequestBody CustomerCreation customer) {
-		if(customer.getCustomerAccountNumber()) {
-			boolean isAlreadyExist = retailbankService.
-		}
-	} */
+	  @PostMapping("/customerregistration")
+		public String customerRegistration(@RequestBody CustomerCreation customer){
+		  String message =  retailbankingService.customerRegistration(customer);
+		 return message;
+      }
 
 }
