@@ -1,5 +1,7 @@
 package com.hcl.retailbanking.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +15,7 @@ public class ManagePayeeServiceImpl implements ManagePayeeService {
 
 	@Autowired
 	ManagePayeeRepository managePayeeRepo;
-	
+
 	@Autowired
 	MailService mailService;
 
@@ -68,6 +70,16 @@ public class ManagePayeeServiceImpl implements ManagePayeeService {
 		} else {
 			return "Payee verification and deletion failed!";
 		}
+	}
+
+	@Override
+	public List<ManagePayee> getPayee(Long payee_id) {
+		return managePayeeRepo.findAllByPayId(payee_id);
+	}
+
+	@Override
+	public List<ManagePayee> getAllPayee() {
+		return managePayeeRepo.findAll();
 	}
 
 }
